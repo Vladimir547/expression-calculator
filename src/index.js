@@ -99,6 +99,9 @@ function ReversePolishNotation (arr) {
         }
     }
     while(arrayOfOperator.length){
+        if(arrayOfOperator[arrayOfOperator.length - 1] == '('){
+            throw new Error("ExpressionError: Brackets must be paired");
+        }
         output.push(arrayOfOperator.pop());
     }
     return output;
